@@ -284,11 +284,11 @@ const hornOfGondor = () => {
 // ============
 const itsDangerousToGoAlone = () => {
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
-  $(mordor).append("#Frodo Baggins");
-  $(mordor).append$("#Samwise 'Sam' Gamgee");
+  $(".Mordor").append("#Frodo Baggins");
+  $(".Mordor").append$("#Samwise 'Sam' Gamgee");
   let mountDoom = $("<div>").atttr("id", "mount-doom");
-  $(mordor).append();
   // 2. add a div with an id of 'mount-doom' to Mordor
+  $(".Mordor").append("#mount-doom");
 };
 
 // COMMIT YOUR WORK
@@ -299,8 +299,12 @@ const itsDangerousToGoAlone = () => {
 // ============
 const weWantsIt = () => {
   // 1. Create a div with an id of 'gollum' and add it to Mordor
+  let myPrecious = $("<div>").attr("id", "Gollum");
+  $(".Mordor").append(myPrecious);
   // 2. Move the ring from Frodo and give it to Gollum
+  myPrecious.append(".the-ring");
   // 3. Move Gollum into Mount Doom
+  $("#mount-doom").append(myPrecious);
 };
 
 // COMMIT YOUR WORK
