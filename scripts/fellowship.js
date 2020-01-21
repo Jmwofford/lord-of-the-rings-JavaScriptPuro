@@ -24,6 +24,8 @@ $(() => {
   let shire = lands[0];
   let rivendell = lands[1];
   let mordor = lands[2];
+
+  $("#The-Shire").on("click", leaveTheShire());
 });
 // ====================================
 //           Chapters
@@ -151,6 +153,9 @@ const makeBuddies = () => {
     "Strider",
     "Boromir"
   ];
+  for (bud in buddies) {
+    console.log(buddies[bud]);
+  }
   // 1. create an aside tag and append it to middle-earth below mordor
   let island = $("<aside>");
   $("#middle-earth").prepend(island);
@@ -162,7 +167,6 @@ const makeBuddies = () => {
     island.append(ally);
   }
 };
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
 
@@ -172,6 +176,8 @@ const makeBuddies = () => {
 
 const leaveTheShire = () => {
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
+  let theMove = $(".hobbitContainer").append("#Rivendell");
+  console.log(theMove);
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
   //Stretch: add an event handler/listener so that when you click on the `h1` The Shire, this function will be called (be sure to do it in the window.onload/document.ready function)
 };
@@ -183,6 +189,21 @@ const leaveTheShire = () => {
 // Chapter 7
 // ============
 const beautifulStranger = () => {
+  const buddies = [
+    "Gandalf the Grey",
+    "Legolas",
+    "Gimli",
+    "Strider",
+    "Boromir"
+  ];
+  for (x in buddies) {
+    if (buddies[x] == "Strider") {
+      buddies[x] = "Aragon";
+      console.log(buddies[x]);
+    } else {
+      console.log(buddies[x]);
+    }
+  }
   // 1. change the buddy 'Strider' textnode to "Aragorn"
   // hint: You can get a list of elements by tag name, such as 'aside'
 };
