@@ -236,7 +236,22 @@ const forgeTheFellowShip = () => {
 // ============
 const theBalrog = () => {
   // 1. change the 'Gandalf' text to 'Gandalf the White'
+  const buddies = [
+    "Gandalf the Grey",
+    "Legolas",
+    "Gimli",
+    "Strider",
+    "Boromir"
+  ];
+
   // 2. add a class "the-white" to this element
+  for (k in buddies) {
+    if (buddies[k] == "Gandalf the Grey") {
+      buddies[k] = "Gandalf the White";
+      $("<li>").addClass("the-white");
+    }
+    console.log(buddies[k]);
+  }
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
 };
 
