@@ -87,7 +87,7 @@ const makeHobbits = () => {
   // 2. make each hobbit an li element and append it to the 'ul' you just created
   for (i = 0; i < hobbits.length; i++) {
     // hint: use the given 'hobbits' array and use a for loop
-    // console.log(hobbits[i]);
+    console.log(hobbits[i]);
     let thisHobbit = $("<li>")
       .addClass("hobbit")
       .attr("id", hobbits[i]);
@@ -123,11 +123,20 @@ const keepItSecretKeepItSafe = () => {
 // Chapter 4
 // ============
 const makeBaddies = () => {
+  const baddies = ["Sauron", "Saruman", "The Uruk-hai", "Orcs"];
   // 1. display an unordered list of baddies in Mordor
-  // 2. give each of the baddies a class of "baddy"
+  for (bads = 0; bads < baddies.length; bads++) {
+    console.log(baddies[bads]);
+    $("<ul>").addClass("badContainer");
+    let villain = $("<li>")
+      // 2. give each of the baddies a class of "baddy"
+      .addClass("baddies")
+      .append(baddies[bads]);
+  }
   // 3. remember to append the ul to Mordor
+  let findMordor = $(".Mordor");
+  findMordor.append(".badContainer");
 };
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
 
