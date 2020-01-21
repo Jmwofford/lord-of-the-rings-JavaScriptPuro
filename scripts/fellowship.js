@@ -24,8 +24,6 @@ $(() => {
   let shire = lands[0];
   let rivendell = lands[1];
   let mordor = lands[2];
-
-  $("#The-Shire").on("click", leaveTheShire());
 });
 // ====================================
 //           Chapters
@@ -131,6 +129,7 @@ const makeBaddies = () => {
     console.log(baddies[bads]);
     $("<ul>").addClass("badContainer");
     let villain = $("<li>")
+      .attr("id", baddies[bads])
       // 2. give each of the baddies a class of "baddy"
       .addClass("baddies")
       .append(baddies[bads]);
@@ -262,9 +261,19 @@ const theBalrog = () => {
 // Chapter 10
 // ============
 const hornOfGondor = () => {
+  const buddies = [
+    "Gandalf the Grey",
+    "Legolas",
+    "Gimli",
+    "Strider",
+    "Boromir"
+  ];
   // 1. create a pop-up alert that the horn of gondor has been blown
+  alert("Horn Of Gondor has Been Blown");
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
+  console.log(buddies[-1].css("text-decoration", "line-through"));
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
+  $("#The Uruk-hai").remove();
 };
 
 // COMMIT YOUR WORK
@@ -326,4 +335,5 @@ $(() => {
   $("#11").on("click", itsDangerousToGoAlone);
   $("#12").on("click", weWantsIt);
   $("#13").on("click", thereAndBackAgain);
+  $("#The-Shire").on("click", leaveTheShire);
 });
