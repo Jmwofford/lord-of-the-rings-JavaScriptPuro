@@ -51,10 +51,11 @@ const makeMiddleEarth = () => {
     //   3a. creates an article tag (there should be one for each land when the loop is done)
     //   3b. gives each land article an `id` tag of the corresponding land name
     let landSec = $("<section>").attr("id", lands[i]);
+    console.log(landSec);
     // console.log(landSec);
     //   3c. includes an h1 with the name of the land inside each land article
     let landTitle = $("<h1>").text("lands[i]");
-    console.log(landTitle.text);
+    console.log(landTitle);
 
     let landObject = {
       landId: landSec,
@@ -78,6 +79,7 @@ const makeHobbits = () => {
     "Meriadoc 'Merry' Brandybuck",
     "Peregrin 'Pippin' Took"
   ];
+
   // Goal: display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // 1. create a 'ul'
   let hobContainer = $("<ul>").addClass("hobbitContainer");
@@ -86,27 +88,30 @@ const makeHobbits = () => {
   for (i = 0; i < hobbits.length; i++) {
     // hint: use the given 'hobbits' array and use a for loop
     // console.log(hobbits[i]);
-    let thisHobbit = $("<li>").addClass("hobbit");
+    let thisHobbit = $("<li>")
+      .addClass("hobbit")
+      .attr("id", hobbits[i]);
     $(hobContainer).append(thisHobbit);
     // console.log(hobContainer);
     // 3. also, give each hobbit (`li`) a class of "hobbit"
   }
-  let findShire = $(".The-Shire");
-  findShire.append(hobContainer);
-
-  // 4. append the ul to the shire
   // hint: get 'The-Shire' by using its id
+  let findShire = $(".The-Shire");
+  // 4. append the ul to the shire
+  findShire.append(hobContainer);
 };
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
 
 // ============
 // Chapter 3
 // ============
+
 const keepItSecretKeepItSafe = () => {
   // 1. create an empty div with an id of 'the-ring'
+  let thaRing = $("<div>").addClass("the-ring");
   // 2. add the ring as a child of Frodo
+  $(".Frodo Baggins").append(thaRing);
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
   // when you think you have given Frodo the ring, check in your Elements tab to see that it works correctly
 };
