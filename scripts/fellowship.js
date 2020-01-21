@@ -157,7 +157,7 @@ const makeBuddies = () => {
     console.log(buddies[bud]);
   }
   // 1. create an aside tag and append it to middle-earth below mordor
-  let island = $("<aside>");
+  let island = $("<aside>").attr("id", "buddyPack");
   $("#middle-earth").prepend(island);
   // 2. display an unordered list of buddies in the aside
   for (i = 0; i < buddies.length; i++) {
@@ -198,13 +198,13 @@ const beautifulStranger = () => {
   ];
   for (x in buddies) {
     if (buddies[x] == "Strider") {
+      // 1. change the buddy 'Strider' textnode to "Aragorn"
       buddies[x] = "Aragon";
       console.log(buddies[x]);
     } else {
       console.log(buddies[x]);
     }
   }
-  // 1. change the buddy 'Strider' textnode to "Aragorn"
   // hint: You can get a list of elements by tag name, such as 'aside'
 };
 
@@ -216,9 +216,16 @@ const beautifulStranger = () => {
 // ============
 const forgeTheFellowShip = () => {
   // 1. create a new div with an id 'the-fellowship'
+  let fellowShip = $("<div>").attr("id", "the-fellowship");
   // 2. add an h1 with the text 'The Fellowship' to this new div
+  let newh1 = $("<h1>").text("The Fellowship");
+  fellowShip.append(newh1);
   // 3. append the fellowship to middle-earth
+  $("#middle-earth").append(fellowShip);
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  let squadUp = $("#middle-earth")
+    .append($(".hobbitContainer"))
+    .prepend("#buddyPack");
 };
 
 // COMMIT YOUR WORK
